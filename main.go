@@ -1,30 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"formcore/api/repositories"
+	"formcore/api/controllers"
 	"log"
+	"net/http"
 
+	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 )
 
 func initializeDotenv() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatalf("Error cargando el archivo .env: %v", err)
+		log.Fatalf("Error cargando el archivo .env: %v"+"Porfavor cree un archivo .env en la raíz del proyecto con las variables TEAMCORE_API_URL y TEAMCORE_API_TOKEN", err)
 	}
 }
 
 func main() {
 	initializeDotenv()
-
-	repository := repositories.QuestionsRepository{}
-	questions, err := repository.GetQuestions()
-
+	questionsController := controllers.QuestionsControler{}
+	router := mux.NewRouter().StrictSlash(true)
+	router.HandleFunc("/questions", questionsController.Get)
+	err := http.ListenAndServe(":3000", router)
 	if err != nil {
-		fmt.Println(err.Error())
-	} else {
-		fmt.Println(questions.Date)
+		log.Fatal(err)
 	}
-
 }
