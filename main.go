@@ -1,8 +1,8 @@
 package main
 
 import (
-	"formcore/api/controllers"
-	"formcore/api/middlewares"
+	"formcoreapi/controllers"
+	"formcoreapi/middlewares"
 	"log"
 	"net/http"
 

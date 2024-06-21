@@ -1,9 +1,9 @@
 package services
 
 import (
-	"formcore/api/models"
-	"formcore/api/repositories"
-	"formcore/api/utils"
+	"formcoreapi/models"
+	"formcoreapi/repositories"
+	"formcoreapi/utils"
 	"strconv"
 )
 

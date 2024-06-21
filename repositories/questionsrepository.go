@@ -1,8 +1,8 @@
 package repositories
 
 import (
-	"formcore/api/api"
-	"formcore/api/dtos"
+	"formcoreapi/api"
+	"formcoreapi/dtos"
 )
 
 type QuestionsRepository struct{}

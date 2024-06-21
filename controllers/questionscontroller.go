@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"encoding/json"
-	"formcore/api/models"
-	"formcore/api/services"
+	"formcoreapi/models"
+	"formcoreapi/services"
 	"net/http"
 )
 
