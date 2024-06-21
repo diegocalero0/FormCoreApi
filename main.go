@@ -2,6 +2,7 @@ package main
 
 import (
 	"formcore/api/controllers"
+	"formcore/api/middlewares"
 	"log"
 	"net/http"
 
@@ -20,7 +21,10 @@ func main() {
 	initializeDotenv()
 	questionsController := controllers.QuestionsControler{}
 	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/questions", questionsController.Get)
+
+	router.Handle("/questions", middlewares.AuthMiddleware(http.HandlerFunc(questionsController.Get)))
+	router.HandleFunc("/generateToken", middlewares.GenerateTokenHandler)
+
 	err := http.ListenAndServe(":3000", router)
 	if err != nil {
 		log.Fatal(err)
