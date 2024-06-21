@@ -8,7 +8,7 @@ import (
 	"strconv"
 )
 
-// Method that allows to perform a GET request
+// Function that allows to perform a GET request
 // to the Teamcore API
 func Get[T any]() (*T, error) {
 	url := os.Getenv("TEAMCORE_API_URL")

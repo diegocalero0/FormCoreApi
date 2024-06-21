@@ -61,7 +61,7 @@ func AuthMiddleware(next http.Handler) http.Handler {
 	})
 }
 
-// This method creates a generic bearer token for process anothers request
+// Function that creates a generic bearer token for process anothers request
 func GenerateTokenHandler(w http.ResponseWriter, _ *http.Request) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"username": "Teamform generic username",

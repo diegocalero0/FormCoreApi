@@ -10,6 +10,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// Function that loads all enviroment variables from .env file
 func initializeDotenv() {
 	err := godotenv.Load()
 	if err != nil {

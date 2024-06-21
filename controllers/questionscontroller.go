@@ -7,6 +7,7 @@ import (
 	"net/http"
 )
 
+// Controller that manage all methods related to the questions
 type QuestionsControler struct {
 	QuestionsService services.QuestionsService
 }

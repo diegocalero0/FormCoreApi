@@ -43,7 +43,7 @@ El proyecto fue desarrollado de tal manera que sea fácil desplegar en Cloud Run
 * Un usuario con acceso al proyecto.
 
 ### Autenticar
-Este paso es opcional, se puede omitir en caso de que ya se tenga configurada la autenticación y el proyecto al cual se desea subir el proyecto.
+Este paso es opcional, se puede omitir en caso de que ya se tenga configurada la autenticación y el proyecto al cual se desea subir el programa.
 
 Para autenticar puede usar el siguiente comando:
 
@@ -77,7 +77,7 @@ No olvide reemplazar {PROJECT_ID} por el id de su proyecto en Google Cloud.
 Si la ejecución de los 2 comandos anterior fue exitosa, tendrá una respuesta similar a la siguiente:
 
 ```
-Deploying container to Cloud Run service [teamform-api] in project [tinpos-project] region [us-central1]
+Deploying container to Cloud Run service [teamform-api] in project {PROJECT_ID} region [us-central1]
 ✓ Deploying... Done.                                                                                                                        
   ✓ Creating Revision...                                                                                                                    
   ✓ Routing traffic...                                                                                                                      
